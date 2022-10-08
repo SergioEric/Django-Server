@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-rc^*w^w&6g9_(uvx#6s*bnt!w)l0rdi%!l7mv#y%uc&x%wo5pk
 
 # SECURITY WARNING: don't run with debug turned on in production!
 print("PRODUCTION is: " +os.environ["PRODUCTION"])
-DEBUG = False
+DEBUG = True
+# DEBUG = os.environ["PRODUCTION"] is "True"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -126,3 +127,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ["https://*.railway.app","https://*.devef.com"]
